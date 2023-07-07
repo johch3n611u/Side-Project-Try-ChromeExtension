@@ -1,0 +1,34 @@
+{
+    "manifest_version": 3,
+    "name": "找個東西",
+    "description": "找個東西",
+    "version": "1.0.0",
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "action": {
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "activeTab",
+        "clipboardRead"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "/background.js"
+            ],
+            "run_at": "document_start",
+            "type": "module"
+        }
+    ]
+}
